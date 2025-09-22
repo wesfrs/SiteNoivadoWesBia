@@ -6,7 +6,7 @@
     --gold-color: #b8860b;
     --dark-gold-color: #a0740a;
     --text-color: #333;
-    --container-bg: rgba(255, 255, 255, 0.95);
+    --container-bg: #ffffff; /* Fundo sólido */
     --envelope-bg: #f0e6d2;
     --envelope-flap: #e6d5b8;
 }
@@ -38,7 +38,7 @@ body.invitation-page { overflow-y: auto; }
     background-position: bottom left, bottom left;
     clip-path: polygon(0 0, 100% 0, 50% 100%);
     transform-origin: top; transition: transform 0.7s 0.2s ease-in-out;
-    z-index: 9; /* Abaixo da lavanda e do selo */
+    z-index: 9;
 }
 
 .envelope::after, .envelope-front { /* Back and Front Face */
@@ -73,9 +73,9 @@ body.invitation-page { overflow-y: auto; }
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(-15deg);
-    width: 190px; /* Tamanho reduzido em 15% */
-    height: 190px; /* Tamanho reduzido em 15% */
-    z-index: 10; /* Acima da aba */
+    width: 190px;
+    height: 190px;
+    z-index: 10;
     transition: opacity 0.5s, transform 0.5s;
     filter: drop-shadow(0 2px 3px rgba(0,0,0,0.2));
 }
@@ -87,7 +87,7 @@ body.invitation-page { overflow-y: auto; }
     transform: translate(-50%, -50%);
     width: 90px;
     height: 90px;
-    z-index: 11; /* Acima de tudo */
+    z-index: 11;
     transition: opacity 0.5s, transform 0.5s;
     filter: drop-shadow(0 3px 5px rgba(0,0,0,0.4));
 }
@@ -105,7 +105,8 @@ body.invitation-page { overflow-y: auto; }
 /* --- Invitation Page Styles (convite.html) --- */
 .container {
     position: relative; z-index: 2; padding: 40px; max-width: 700px; margin: 8vh auto;
-    background-color: var(--container-bg); backdrop-filter: blur(5px); border-radius: 10px;
+    background-color: var(--container-bg); /* Cor de fundo sólida */
+    border-radius: 10px;
     text-align: center; opacity: 0; animation: fadeIn 1.5s 0.5s forwards; user-select: text;
     border: 1px solid rgba(184, 134, 11, 0.4);
     box-shadow: 0 5px 25px rgba(0,0,0,0.1), inset 0 0 0 5px #fff, inset 0 0 0 6px rgba(184, 134, 11, 0.4);
@@ -117,7 +118,7 @@ body.invitation-page { overflow-y: auto; }
     width: 80%;
     max-width: 480px;
     height: auto;
-    margin-bottom: 40px;
+    margin-bottom: 60px;
 }
 
 .corner-decoration {
@@ -135,7 +136,7 @@ body.invitation-page { overflow-y: auto; }
 
 .container h1 { font-family: 'Parisienne', cursive; font-size: clamp(3rem, 8vw, 4.5rem); line-height: 1.2; color: var(--gold-color); margin: 20px 0; }
 
-blockquote { margin: 0 auto 30px auto; padding: 0 20px; max-width: 90%; border: none; font-style: italic; color: #555; }
+blockquote { margin: 40px auto; padding: 0 20px; max-width: 90%; border: none; font-style: italic; color: #555; }
 blockquote p { margin: 0; font-size: 1.2rem; line-height: 1.7; }
 blockquote footer { text-align: right; margin-top: 10px; font-style: normal; font-size: 1rem; color: var(--dark-gold-color); font-weight: 700; }
 
@@ -143,10 +144,22 @@ blockquote footer { text-align: right; margin-top: 10px; font-style: normal; fon
 
 .message p { font-size: 1.2rem; line-height: 1.8; color: var(--text-color); max-width: 90%; margin: 20px auto; }
 
+.gallery {
+    margin: 30px 0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery .landscape {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .details { margin-top: 20px; }
 .save-the-date { margin: 40px 0; }
-.std-title { font-size: 2rem; color: var(--text-color); letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
-.std-date { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 5rem; color: var(--gold-color); margin: 10px 0; }
+.std-title { font-size: 2.5rem; color: var(--text-color); letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+.std-date { font-family: 'Cormorant Garamond', serif; font-weight: 700; font-size: 6rem; color: var(--gold-color); margin: 10px 0; }
 .std-date .separator { color: rgba(184, 134, 11, 0.5); }
 .details p { font-size: 1.1rem; margin: 12px 0; }
 
@@ -176,6 +189,6 @@ footer .fa-heart { color: var(--gold-color); animation: pulse 2s infinite ease-i
     .header-monogram { width: 80%; max-width: 320px; margin-bottom: 50px; }
     .container h1 { font-size: 2.8rem; }
     .message p { font-size: 1.1rem; max-width: 95%; }
-    .std-title { font-size: 1.5rem; }
-    .std-date { font-size: 3.5rem; }
+    .std-title { font-size: 2rem; }
+    .std-date { font-size: 4.5rem; }
 }
