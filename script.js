@@ -35,6 +35,8 @@ document.addEventListener('DOMContentLoaded', () => {
         // Button logic
         const confirmBtn = document.getElementById('confirm-presence');
         const locationBtn = document.getElementById('show-location');
+        const calendarBtn = document.getElementById('add-to-calendar');
+
 
         if (confirmBtn) {
             confirmBtn.addEventListener('click', () => {
@@ -47,6 +49,18 @@ document.addEventListener('DOMContentLoaded', () => {
             locationBtn.addEventListener('click', () => {
                 const address = 'Alameda Curitiba, 365 - Res. Doze (Alphaville), Santana de Parnaíba - SP, 06539-020';
                 window.open('https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(address), '_blank');
+            });
+        }
+
+        if (calendarBtn) {
+            calendarBtn.addEventListener('click', () => {
+                const title = 'Noivado Wesley & Beatriz';
+                const startDate = '20251026T140000';
+                const endDate = '20251026T200000';
+                const details = 'Noivado de Wesley e Beatriz';
+                const location = 'Alameda Curitiba, 365 - Res. Doze (Alphaville), Santana de Parnaíba - SP, 06539-020';
+                const googleCalendarUrl = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(title)}&dates=${startDate}/${endDate}&details=${encodeURIComponent(details)}&location=${encodeURIComponent(location)}`;
+                window.open(googleCalendarUrl, '_blank');
             });
         }
     }
